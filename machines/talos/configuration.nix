@@ -89,6 +89,7 @@
   programs = {
     zsh.enable = true;
     flashrom.enable = true;
+    gnome-terminal.enable = true;
   };
 
   # Enable the OpenSSH daemon.
