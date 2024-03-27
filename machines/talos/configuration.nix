@@ -4,8 +4,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../hardware/p8-laptop.nix
       ../../common.nix
-      ../../hardware/intel-uhd.nix
     ];
 
   system.copySystemConfiguration = true;
@@ -14,12 +14,6 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams =
-    [
-      "video=efifb:mode=0"
-      "fbcon=rotate:1"
-    ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "talos";
   networking.networkmanager.enable = true;
@@ -32,16 +26,6 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.xkb.layout = "us";
   services.xserver.libinput.enable = true;
-  services.xserver.xrandrHeads =
-  [
-    {
-      output = "DSI-1";
-      primary = true;
-      monitorConfig = ''
-        Option "Rotate" "left"
-      '';
-    }
-  ];
 
   # Enable sound.
   sound.enable = true;
