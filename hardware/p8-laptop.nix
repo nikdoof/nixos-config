@@ -29,18 +29,6 @@
         antialias = false;
 	};
 
-    # Provide rotation to X/Wayland
-    services.xserver.xrandrHeads =
-    [
-        {
-        output = "DSI-1";
-        primary = true;
-        monitorConfig = ''
-            Option "Rotate" "left"
-        '';
-        }
-    ];
-
     # The keyboard is US layout
     services.xserver.xkb.layout = "us";
 
