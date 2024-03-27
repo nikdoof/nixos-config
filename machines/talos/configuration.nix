@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 {
@@ -9,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../common.nix
+      ../../hardware/intel-uhd.nix
     ];
 
   system.copySystemConfiguration = true;
@@ -53,47 +50,18 @@
   # Enable sensors
   hardware.sensor.iio.enable = true;
 
-  # Accel graphics
-  nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
-    git
-    gnupg
-    lsof
-    gnumake
     firefox
-    python3
   ];
 
   programs = {
-    zsh.enable = true;
     flashrom.enable = true;
     gnome-terminal.enable = true;
   };
 
   # Enable the OpenSSH daemon.
   services = {
-    openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "yes";
-      };
-    };
     locate.enable = true;
     upower.enable = true;
     thermald.enable = true;

@@ -2,7 +2,7 @@
 
 {
     imports = [
-        users.nix
+        ./users.nix
     ];
 
     # Set your time zone.
@@ -13,5 +13,26 @@
     console = {
         font = "Lat2-Terminus16";
         useXkbConfig = true; # use xkb.options in tty.
+    };
+
+    programs = {
+        zsh.enable = true;
+    };
+
+    environment.systemPackages = with pkgs; [
+        git
+        gnupg
+        lsof
+        gnumake
+        python3
+    ];
+
+    services = {
+        openssh = {
+            enable = true;
+            settings = {
+                PermitRootLogin = "yes";
+            };
+        };
     };
 }
