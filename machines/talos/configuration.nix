@@ -63,7 +63,7 @@
   hardware.sensor.iio.enable = true;
 
   hardware.opengl.extraPackages = [
-    intel-media-driver
+    "intel-media-driver"
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
