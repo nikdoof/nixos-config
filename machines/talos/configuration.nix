@@ -33,4 +33,6 @@
     flashrom.enable = true;
     gnome-terminal.enable = true;
   };
+
+  services.tailscale.enable = true;
 }
