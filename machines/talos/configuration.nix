@@ -62,12 +62,20 @@
   # Enable sensors
   hardware.sensor.iio.enable = true;
 
+  hardware.opengl.extraPackages = [
+    intel-media-driver
+  ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.zsh;
     users.nikdoof = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      extraGroups = 
+      [ 
+        "wheel"
+        "video" 
+      ];
       shell = pkgs.zsh;
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHWO2qwHaPaQs46na4Aa6gMkw5QqRHUMGQphtgAcDJOw"
