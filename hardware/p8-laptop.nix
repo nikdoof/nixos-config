@@ -25,6 +25,27 @@
         '';
         }
     ];
+
+    # The keyboard is US layout
+    services.xserver.xkb.layout = "us";
+
+    # Enable sensors
+    hardware.sensor.iio.enable = true;
+
+    # Enable sound.
+    sound.enable = true;
+    hardware.pulseaudio.enable = true;
+
+    # Enable touch input
+    services.xserver.libinput.enable = true;
+
+    # Enable some standard services
+    services = {
+        upower.enable = true;
+        thermald.enable = true;
+        fwupd.enable = true;
+        smartd.enable = true;
+    };
 }
 
 
