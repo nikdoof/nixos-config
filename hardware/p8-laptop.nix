@@ -6,6 +6,9 @@
         ./intel-uhd.nix
     ];
 
+    # Extra kernel modules
+    boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "thunderbolt" ];
+
     # Fix on boot framebuffer res and rotation
     boot.kernelParams =
     [
@@ -23,6 +26,7 @@
 		# Per the documentation, antialiasing, hinting, etc. have no visible effect at such high pixel densities anyhow.
 		# Set manually, as the hiDPI module had incorrect settings prior to NixOS 22.11; see nixpkgs#194594.
 		hinting.enable = false;
+        antialias = false;
 	};
 
     # Provide rotation to X/Wayland
