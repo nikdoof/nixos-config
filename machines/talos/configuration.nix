@@ -86,7 +86,10 @@
     python3
   ];
 
-  programs.zsh.enable = true;
+  programs = {
+    zsh.enable = true;
+    flashrom.enable = true;
+  };
 
   # Enable the OpenSSH daemon.
   services = {
@@ -100,6 +103,7 @@
     upower.enable = true;
     thermald.enable = true;
     fwupd.enable = true;
+    smartd.enable = true;
   };
 
   networking.firewall.enable = true;
