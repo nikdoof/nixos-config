@@ -21,12 +21,6 @@
     # Fix the font rendering
 	fonts.fontconfig = {
 		subpixel.rgba = "vbgr";  # Pixel order for rotated screen
-
-		# The OLED display has √(1920² + 1200²) px / 8in ≃ 283 dpi
-		# Per the documentation, antialiasing, hinting, etc. have no visible effect at such high pixel densities anyhow.
-		# Set manually, as the hiDPI module had incorrect settings prior to NixOS 22.11; see nixpkgs#194594.
-		hinting.enable = false;
-        antialias = false;
 	};
 
     # The keyboard is US layout
