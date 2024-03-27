@@ -8,10 +8,11 @@
 
     # Fix on boot framebuffer res and rotation
     boot.kernelParams =
-        [
+    [
         "video=efifb:mode=0"
+        "video=DSI-1:panel_orientation=right_side_up"
         "fbcon=rotate:1"
-        ];
+    ];
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     # Provide rotation to X/Wayland
