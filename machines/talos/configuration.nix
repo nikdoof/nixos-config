@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../common.nix
     ];
 
   system.copySystemConfiguration = true;
@@ -26,16 +27,6 @@
   networking.hostName = "talos";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/London";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console = {
-     font = "Lat2-Terminus16";
-     useXkbConfig = true; # use xkb.options in tty.
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -78,21 +69,6 @@
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users = {
-    defaultUserShell = pkgs.zsh;
-    users.nikdoof = {
-      isNormalUser = true;
-      extraGroups = 
-      [ 
-        "wheel"
-        "video" 
-      ];
-      shell = pkgs.zsh;
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHWO2qwHaPaQs46na4Aa6gMkw5QqRHUMGQphtgAcDJOw"
-      ];
-    };
-  };
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
