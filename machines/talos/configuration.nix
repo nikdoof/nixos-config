@@ -81,6 +81,7 @@
   environment.systemPackages = with pkgs; [
     git
     lsof
+    gnumake
   ];
 
   programs.zsh.enable = true;
