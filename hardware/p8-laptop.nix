@@ -30,7 +30,7 @@
     hardware.sensor.iio.enable = true;
     services.udev.extraHwdb = ''
         sensor:modalias:acpi:BOSC0200*:dmi:*
-        ACCEL_MOUNT_MATRIX=-1, 0, 0; 0, 1, 0; 1, 0, 0
+          ACCEL_MOUNT_MATRIX=-1, 0, 0; 0, 1, 0; 1, 0, 0
     '';
 
     # Enable sound.
