@@ -89,7 +89,7 @@
   programs.zsh.enable = true;
 
   # Enable the OpenSSH daemon.
-  services {
+  services = {
     openssh = {
       enable = true;
       settings = {
