@@ -82,16 +82,24 @@
     git
     lsof
     gnumake
+    firefox
+    python3
   ];
 
   programs.zsh.enable = true;
 
   # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "yes";
+  services {
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "yes";
+      };
     };
+    locate.enable = true;
+    upower.enable = true;
+    thermald.enable = true;
+    fwupd.enable = true;
   };
 
   networking.firewall.enable = true;
