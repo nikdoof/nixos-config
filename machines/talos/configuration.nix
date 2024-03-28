@@ -13,6 +13,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.plymouth.enable = true;
 
   networking.hostName = "talos";
   networking.networkmanager.enable = true;
@@ -36,4 +37,7 @@
 
   services.tailscale.enable = true;
   services.fstrim.enable = true;
+
+  services.logind.lidSwitchDocked = "ignore";
+  services.logind.lidSwitchExternalPower = "ignore";
 }
