@@ -27,6 +27,10 @@
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     firefox
+    obsidian
+    vscode-fhs
+    gnome.gnome-power-manager
+    gnomeExtensions.screen-rotate
   ];
 
   programs = {
