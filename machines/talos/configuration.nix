@@ -8,6 +8,8 @@
       ../../common.nix
     ];
 
+  nixpkgs.config.allowUnfree = true;
+
   system.stateVersion = "23.11";
 
   # Use the systemd-boot EFI boot loader.
