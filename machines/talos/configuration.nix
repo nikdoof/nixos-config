@@ -9,6 +9,7 @@
     ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = true;
 
   system.stateVersion = "23.11";
 
