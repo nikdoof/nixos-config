@@ -5,6 +5,12 @@
         ./users.nix
     ];
 
+    users.motd = "^[[1;49;95m     __          ___         __
+ ___/ /__  ___  / _/__  ___ / /_
+/ _  / _ \/ _ \/ _/ _ \/ -_) __/
+\_,_/\___/\___/_//_//_/\__/\__/
+^[[0m"
+
     system.copySystemConfiguration = true;
 
     # Set your time zone.
