@@ -26,23 +26,24 @@
         font = "spleen-12x24";
         useXkbConfig = true; # use xkb.options in tty.
         colors = [
-            "292D3E"
-            "444267"
-            "32374D"
-            "676E95"
-            "8796B0"
-            "959DCB"
-            "959DCB"
-            "FFFFFF"
-            "F07178"
-            "F78C6C"
-            "FFCB6B"
-            "C3E88D"
-            "89DDFF"
-            "82AAFF"
-            "C792EA"
-            "FF5370"
-        ];
+            "000000"
+            "ff5370"
+            "c4e88d"
+            "ffcb6b"
+            "82aaff"
+            "c692e9"
+            "8addff"
+            "fffefe"
+            "676e95"
+            "ff5370"
+            "c3e88d"
+            "ffcb6b"
+            "82a9fe"
+            "c792e9"
+            "8addff"
+            "88ddff"
+            "ffffff"
+        ]
     };
 
     programs = {
