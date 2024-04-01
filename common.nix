@@ -26,14 +26,14 @@
         font = "spleen-12x24";
         useXkbConfig = true; # use xkb.options in tty.
         colors = [
-            "000000"
+            "363c51"
             "ff5370"
             "c4e88d"
             "ffcb6b"
             "82aaff"
             "c692e9"
             "8addff"
-            "fffefe"
+            "b5bbd6"
             "676e95"
             "ff5370"
             "c3e88d"
