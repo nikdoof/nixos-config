@@ -43,7 +43,7 @@
             "8addff"
             "88ddff"
             "ffffff"
-        ]
+        ];
     };
 
     programs = {
