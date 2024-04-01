@@ -22,7 +22,7 @@
     # Select internationalisation properties.
     i18n.defaultLocale = "en_GB.UTF-8";
     console = {
-        packages = [ pkgs.spleen ];
+        packages = [ pkgs.spleen pkg.tamsyn ];
         font = "spleen-12x24";
         useXkbConfig = true; # use xkb.options in tty.
         colors = [
