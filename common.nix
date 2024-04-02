@@ -50,6 +50,7 @@
         git.enable = true;
         zsh.enable = true;
         ssh.startAgent = true;
+        gpg.agent.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
