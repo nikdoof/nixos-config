@@ -49,6 +49,7 @@
     programs = {
         git.enable = true;
         zsh.enable = true;
+        ssh.startAgent = true;
     };
 
     environment.systemPackages = with pkgs; [
