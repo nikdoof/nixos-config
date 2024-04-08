@@ -16,7 +16,10 @@
         "video=DSI-1:panel_orientation=right_side_up"
         "fbcon=rotate:1"
     ];
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.extraModprobeConfig = ''
+       options intel_hid enable_sw_tablet_mode=2
+    '';
+    boot.kernelPackages = pkgs.linuxPackages_testing;
 
     # Fix the font rendering
 	fonts.fontconfig = {
